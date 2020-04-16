@@ -1,0 +1,223 @@
+Process 26473:  is running...
+Process 26473:  Wants blockNo 9
+Process 26473 : At starting of
+Process 26473 : Buffer with block number -1 removed from free list
+Process 26473 : Buffer with block number 9 added to the hash queue
+Process 26473:  Acquired blockNo 9
+Process  26473 : Delayed write buffer with blockNo 9
+Adding at the end
+Process  26473 : Unlocked buffer  9             Lock status: True
+Process waiting for specific buffer woke up
+Process 26473:  Finished execution...
+Process 26476:  is running...
+Process 26476:  Wants blockNo 8
+Process 26476 : At starting of
+Process 26476 : Buffer with block number -1 removed from free list
+Process 26476 : Buffer with block number 8 added to the hash queue
+Process 26476:  Acquired blockNo 8
+Process  26476 : Error while reading buffer with 8 . Marking buffer content as invalid
+Adding at the front
+Process  26476 : Unlocked buffer  8             Lock status: True
+No process to wake up
+Process 26476:  Finished execution...
+Process 26478:  is running...
+Process 26478:  Wants blockNo 7
+Process 26478 : At starting of
+Process 26478 : Buffer with block number -1 removed from free list
+Process 26478 : Buffer with block number 7 added to the hash queue
+Process 26478:  Acquired blockNo 7
+Process  26478 : Delayed write buffer with blockNo 7
+Adding at the end
+Process  26478 : Unlocked buffer  7             Lock status: True
+No process to wake up
+Process 26478:  Finished execution...
+Process 26474:  is running...
+Process 26474:  Wants blockNo 9
+Process 26474 : At starting of
+Process 26474 : Going for sleep as block number 9 is present in the HashQ but isn't free
+Process 26474 : Woke up as it was sleeping for a particular buffer
+Process 26474 : At starting of
+Process 26474 : Got buffer with block number 9  from hashQ
+Process 26474:  Acquired blockNo 9
+Process  26474 : Read buffer with blockNo 9
+Adding at the end
+Process  26474 : Unlocked buffer  9             Lock status: True
+Process waiting for specific buffer woke up
+Process 26474:  Finished execution...
+Process 26480:  is running...
+Process 26480:  Wants blockNo 9
+Process 26480 : At starting of
+Process 26480 : Going for sleep as block number 9 is present in the HashQ but isn't free
+Process 26480 : Woke up as it was sleeping for a particular buffer
+Process 26480 : At starting of
+Process 26480 : Got buffer with block number 9  from hashQ
+Process 26480:  Acquired blockNo 9
+Process  26480 : Read buffer with blockNo 9
+Adding at the end
+Process  26480 : Unlocked buffer  9             Lock status: True
+No process to wake up
+Process 26480:  Finished execution...
+
+Free List :
+
+Available buffers: 16
+
+ -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1
+Process 26474 added to the sleep queue
+
+Queue 0:8
+
+
+Queue 1:9
+
+
+Queue 2 is empty.
+
+Queue 3:7
+
+Process 26480 added to the sleep queue
+
+Free List :
+
+Available buffers: 13
+
+ -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1
+-----SLEEP QUEUE-----
+9 : [26474, 26480, ]
+
+Queue 0:8
+
+
+Queue 1:9
+
+
+Queue 2 is empty.
+
+Queue 3:7
+
+
+Free List :
+
+Available buffers: 13
+
+ -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1
+-----SLEEP QUEUE-----
+9 : [26474, 26480, ]
+
+Queue 0:8
+
+
+Queue 1:9
+
+
+Queue 2 is empty.
+
+Queue 3:7
+
+
+Free List :
+
+Available buffers: 13
+
+ -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1
+-----SLEEP QUEUE-----
+9 : [26474, 26480, ]
+
+Free List :
+
+Available buffers: 14
+
+ -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 9
+-----SLEEP QUEUE-----
+9 : [26480, ]
+
+Free List :
+
+Available buffers: 14
+
+ -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 9
+
+Free List :
+
+Available buffers: 13
+
+ -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1
+
+Free List :
+
+Available buffers: 14
+
+ 8 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1
+-----SLEEP QUEUE-----
+9 : [26480, ]
+
+Free List :
+
+Available buffers: 15
+
+ 8 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 7
+-----SLEEP QUEUE-----
+9 : [26480, ]
+
+Queue 0:8
+
+
+Queue 1:9
+
+
+Queue 2 is empty.
+
+Queue 3:7
+
+
+Free List :
+
+Available buffers: 15
+
+ 8 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 7
+-----SLEEP QUEUE-----
+9 : [26480, ]
+
+Free List :
+
+Available buffers: 16
+
+ 8 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 7 -> 9
+-----SLEEP QUEUE-----
+
+Free List :
+
+Available buffers: 16
+
+ 8 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 7 -> 9
+
+Free List :
+
+Available buffers: 15
+
+ 8 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 7
+
+Queue 0:8
+
+
+Queue 1:9
+
+
+Queue 2 is empty.
+
+Queue 3:7
+
+
+Free List :
+
+Available buffers: 15
+
+ 8 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 7
+-----SLEEP QUEUE-----
+
+Free List :
+
+Available buffers: 16
+
+ 8 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> -1 -> 7 -> 9
+-----SLEEP QUEUE-----
