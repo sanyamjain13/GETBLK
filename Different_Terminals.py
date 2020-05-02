@@ -3,17 +3,16 @@ from multiprocessing.managers import BaseManager
 from Buffer import Buffer
 from SleepQueue import SleepQueue
 import multiprocessing, os, random
-import time
+import time, sys
 import BufferManagement
 import BufferRelease
 
 def performOperation(blockNo, bufferHead, lock):
-    
     '''
-    Performs a Random Operation from the following:\n
-    \t1 : Normal read operation
-    \t2 : Write operation which marks the buffer for delayed write
-    \t3 : Mark buffer invalid to simulate error
+    Random Operation
+    1 : Normal read operation
+    2 : Write operation which marks it for delayed write
+    3 : Mark buffer invalid to simulate error
     '''
 
 
@@ -35,16 +34,10 @@ def performOperation(blockNo, bufferHead, lock):
 
     
 
-def processWork(bufferHead, sleepQueue, lock):
-    
-    '''
-    Target function for each spawned process.\n
-    Calls getBlk for a random Block Number.\n
-    Performs some work on the acquired block.\n
-    Then releases the block using brelse.
-    '''
-    
+def processWork(i,bufferHead, sleepQueue, lock):
+	
     startStr = "Process {} :".format(os.getpid())
+    sys.stdout = open("file"+str(i),'w')
     print(startStr, "is running...")
 
     blockNo = random.randint(1, 32)
@@ -67,10 +60,12 @@ def processWork(bufferHead, sleepQueue, lock):
     BufferRelease.brelse(lockedBuffer, bufferHead, lock, sleepQueue)
     
     print(startStr, 'Finished execution...')
+    sys.stdout.close()
+    os.system("gnome-terminal -e 'bash -c \"cat file{}; exec bash\"'".format(i))
+    os.remove("file"+str(i))
+
 
 if __name__ == '__main__':
-    
-    # register the classes of shared data structures.
     BaseManager.register('Buffer', Buffer)
     BaseManager.register('SleepQueue', SleepQueue)
     BaseManager.register('BufferHeader')
@@ -84,16 +79,15 @@ if __name__ == '__main__':
 
     buffer.printFreeList()
 
-    NO_OF_PROCESSES = 20
 
-    # Spawn a number of process and start their execution
+    NO_OF_PROCESSES = 3
+
     processes = []
     for i in range(NO_OF_PROCESSES):
-        p = Process(target=processWork, args=[buffer, sleepQueue, lock])
+        p = Process(target=processWork, args=[i,buffer, sleepQueue, lock])
         processes.append(p)
         p.start()
     
-    # wait for the child processes to complete their execution
     for p in processes:
         p.join()
         
