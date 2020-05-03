@@ -36,3 +36,5 @@ There are five typical scenarios the kernel may follow in getblk to allocate a b
 >      > - [X] Implements **Signal Handling**
 >- ####  [BufferRelease.py](BufferRelease.py) :
 >      > - [X] Implements **brelse()** algorithm
+>- ####  [Different_Terminals.py](Different_Terninals.py) :
+>      > - [X] simulates **Kernel** & Open different Terminal for each Process 
